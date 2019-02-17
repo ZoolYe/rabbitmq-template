@@ -11,7 +11,6 @@ spring:
         max-concurrency: 10
         acknowledge-mode: manual
         prefetch: 1
-        auto-startup: true
 
 server:
   port: 6245

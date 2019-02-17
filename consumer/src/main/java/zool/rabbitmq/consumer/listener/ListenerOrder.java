@@ -25,7 +25,7 @@ public class ListenerOrder {
              key = "order.*"))
     @RabbitHandler
     public void onOrderMessage(@Payload Order order, @Headers Map<String, Object> headers, Channel channel) throws IOException {
-        System.err.println("---------------- 收到Order队列消息 ----------------");
+        System.err.println("\n" + "---------------- 收到Order队列消息 ----------------");
         System.err.println(order.toString());
         Long deliveryTag = (Long) headers.get(AmqpHeaders.DELIVERY_TAG);
         channel.basicAck(deliveryTag,false);

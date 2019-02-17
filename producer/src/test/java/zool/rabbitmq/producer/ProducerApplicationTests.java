@@ -2,12 +2,11 @@ package zool.rabbitmq.producer;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.internal.matchers.Or;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import zool.rabbitmq.common.entity.Order;
-import zool.rabbitmq.producer.push.SendMsg;
+import zool.rabbitmq.producer.push.SendMessage;
 
 import java.math.BigDecimal;
 
@@ -16,7 +15,7 @@ import java.math.BigDecimal;
 public class ProducerApplicationTests {
 
     @Autowired
-    SendMsg sendMsg;
+    SendMessage sendMessage;
 
     @Test
     public void contextLoads() {
@@ -31,7 +30,7 @@ public class ProducerApplicationTests {
                 .money(BigDecimal.valueOf(1300))
                 .name("工资")
                 .numbers(13).build();
-        sendMsg.sendOrder(order);
+        sendMessage.sendOrder(order);
     }
 
 }
